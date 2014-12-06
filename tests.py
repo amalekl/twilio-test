@@ -7,15 +7,15 @@ from twilio import TwilioRestException
 class TestSendPyModule(unittest.TestCase):
 
     def test_valid_params(self):
-    	ret = send_message(body="Test 1", phone="07438483904")
+    	ret_msg = send_message(body="Test 1", phone="07438483904")
         self.assertTrue(ret_msg.status is not "failed")
 
     def test_null_phone(self):
-    	ret = send_message(body="Test 2")
+    	ret_msg = send_message(body="Test 2")
         self.assertTrue(ret_msg.status is not "failed")
 
     def test_null_body(self):
-    	ret = send_message(phone="07438483904")
+    	ret_msg = send_message(phone="07438483904")
         self.assertTrue(ret_msg.status is not "failed")
 
 if __name__ == '__main__':
