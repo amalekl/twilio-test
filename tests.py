@@ -7,16 +7,16 @@ def test_send_message():
 	print "Testing send message..."
 
 	print "Testing sending phone number 07438483904"
-	rCode = send_message(body="It works", phone="07438483904")
-	print "Successful" if not rCode.failed else "[ERROR]"
+	ali = send_message(body="It works", phone="07438483904")
+	print "Successful" if ali.status is not "failed" else "[ERROR]"
 
 	print "Testing sending null number"
-	rCode = send_message(body="It works")
-	print "Successful" if not rCode.failed else "[ERROR]"
+	ali = send_message(body="It works")
+	print "Successful" if ali.status is not "failed" else "[ERROR]"
 
 	print "Testing sending null body"
-	rCode = send_message(phone="07438483904")
-	print "Successful" if not rCode.failed else "[ERROR]"
+	ali = send_message(phone="07438483904")
+	print "Successful" if ali.status is not "failed" else "[ERROR]"
 
 	return True
 
