@@ -12,7 +12,7 @@ class TestSendPyModule(unittest.TestCase):
 
     def test_null_phone(self):
     	ret_msg = send_message(body="Test 2")
-        self.assertTrue(ret_msg is not "failed")
+        self.assertTrue(ret_msg is "failed")
 
     def test_null_body(self):
     	ret_msg = send_message(phone="07438483904")
