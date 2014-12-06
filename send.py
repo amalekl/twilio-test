@@ -20,9 +20,9 @@ def send_message(body=None, phone=None):
 	the_body=body
 	
 	if the_phone!="07438483904":
-		return "failed"
-	if the_body==None:
-		the_body="Empty Text"
+		return "invalid_number"
+	if not the_body or not isinstance(the_body, int):
+		return "invalid_body"
 	
 	ali = client.messages.create(to=the_phone, from_="+441290211149", body=the_body)
 	
