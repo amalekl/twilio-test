@@ -6,9 +6,14 @@ AUTH_TOKEN = "fbe55d3c4254086da12de6b62f3a5d23"
  
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
 
-def send_multiple_messages(body=None, phone=[]):
-	
-	return ["failed"]
+def send_multiple_messages(messages):
+	lst=[]
+	for dicts in messages:	
+		the_body=keys['body']
+		the_phone=vales['phone']
+		func_ret= send_message(body=the_body,phone=the_phone)
+		lst.append(func_ret)
+	return lst
 
 def send_message(body=None, phone=None):
 	the_phone=phone 
@@ -19,10 +24,6 @@ def send_message(body=None, phone=None):
 	if the_body==None:
 		the_body="Empty Text"
 	
-	ali=client.messages.create(
-		to=the_phone, 
-		from_="+441290211149", 
-		body=the_body,  
-	)
+	ali = client.messages.create(to=the_phone, , from_="+441290211149", body=the_body)
 	
 	return ali.status
