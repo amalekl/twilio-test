@@ -12,4 +12,5 @@ def send_message(body=None, phone=None):
 		from_="+441290211149", 
 		body=body,  
 	)
+	print ali.status
 	return ali
