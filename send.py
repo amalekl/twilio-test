@@ -7,6 +7,7 @@ AUTH_TOKEN = "fbe55d3c4254086da12de6b62f3a5d23"
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
 
 def send_multiple_messages(body=None, phone=[]):
+	
 	return ["failed"]
 
 def send_message(body=None, phone=None):
@@ -14,7 +15,7 @@ def send_message(body=None, phone=None):
 	the_body=body
 	
 	if the_phone!="07438483904":
-		return "invalid phone number"
+		return "failed"
 	if the_body==None:
 		the_body="Empty Text"
 	
@@ -24,4 +25,4 @@ def send_message(body=None, phone=None):
 		body=the_body,  
 	)
 	
-	return ali
+	return ali.status
