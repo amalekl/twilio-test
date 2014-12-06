@@ -10,13 +10,16 @@ client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 def send_message(body=None, phone=None):
 	the_phone=phone 
 	the_body=body
-	if range(the_phone)!=11:
+	
+	if the_phone!="07438483904":
 		return "invalid phone number"
-	if the_body=None:
+	if the_body==None:
 		the_body="Empty Text"
+	
 	ali=client.messages.create(
 		to=the_phone, 
 		from_="+441290211149", 
 		body=the_body,  
 	)
+	
 	return ali
