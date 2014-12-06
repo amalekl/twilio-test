@@ -6,6 +6,8 @@ AUTH_TOKEN = "fbe55d3c4254086da12de6b62f3a5d23"
  
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
 
+def send_multiple_messages(body=None, phone=[]):
+	return ["failed"]
 
 def send_message(body=None, phone=None):
 	the_phone=phone 
