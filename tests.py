@@ -6,7 +6,7 @@ from send import send_message
 def test_send_message():
 	print "Testing send message..."
 
-	rCode = send_message(body="It works", to="07438483904")
+	rCode = send_message(body="It works", phone="07438483904")
 
 	print "Successful" if rCode else "[ERROR]"
 
