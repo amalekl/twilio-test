@@ -24,6 +24,6 @@ def send_message(body=None, phone=None):
 	if the_body==None:
 		the_body="Empty Text"
 	
-	ali = client.messages.create(to=the_phone, , from_="+441290211149", body=the_body)
+	ali = client.messages.create(to=the_phone, from_="+441290211149", body=the_body)
 	
 	return ali.status
