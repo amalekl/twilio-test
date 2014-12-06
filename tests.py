@@ -37,6 +37,13 @@ class TestSendMultipleMessages(unittest.TestCase):
 		ret_arr = send_multiple_messages(messages)
 		self.assertTrue(ret_arr[0]=='queued')
 
+	def test_multiple_valid_messages(self):
+		messages = [  { 'body': 'This is message 1', 'phone': "07438483904" }
+					, { 'body': 'This is message 2', 'phone': "07438483904" }
+					, { 'body': 'This is message 3', 'phone': "07438483904" }]
+		ret_arr = send_multiple_messages(messages)
+		self.assertTrue(ret_arr[0]=='queued')
+
 if __name__ == '__main__':
 	print "Running main program..."
 	unittest.main()
