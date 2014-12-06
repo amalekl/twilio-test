@@ -26,6 +26,12 @@ class TestSendPyModule(unittest.TestCase):
     	ret_msg = send_message(body="")
         self.assertTrue(ret_msg is not "failed")
 
+    def test_invalid_body(self):
+    	ret_msg = send_message(body=100)
+        self.assertTrue(ret_msg is not "failed")
+
 if __name__ == '__main__':
 	print "Running main program..."
 	unittest.main()
+
+
