@@ -9,8 +9,8 @@ client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 def send_multiple_messages(messages):
 	lst=[]
 	for dicts in messages:	
-		the_body=keys['body']
-		the_phone=vales['phone']
+		the_body=dicts['body']
+		the_phone=dicts['phone']
 		func_ret= send_message(body=the_body,phone=the_phone)
 		lst.append(func_ret)
 	return lst
