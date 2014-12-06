@@ -8,15 +8,15 @@ class TestSendPyModule(unittest.TestCase):
 
     def test_valid_params(self):
     	ret_msg = send_message(body="Test 1", phone="07438483904")
-        self.assertTrue(ret_msg.status is not "failed")
+        self.assertTrue(ret_msg['status'] is not "failed")
 
     def test_null_phone(self):
     	ret_msg = send_message(body="Test 2")
-        self.assertTrue(ret_msg.status is not "failed")
+        self.assertTrue(ret_msg['status'] is not "failed")
 
     def test_null_body(self):
     	ret_msg = send_message(phone="07438483904")
-        self.assertTrue(ret_msg.status is not "failed")
+        self.assertTrue(ret_msg['status'] is not "failed")
 
 if __name__ == '__main__':
 	print "Running main program..."
